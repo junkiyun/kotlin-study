@@ -1,13 +1,18 @@
 package junkiyun.kotlinstudy.collection;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 class JavaCollection {
 
 	public static void main(String[] args) {
-		List<Integer> integerList = List.of(1, 2, 3, 4, 5, 1, 2, 3, 4, 5);
+		//var integerList = List.of(1, 2, 3, 4, 5, 1, 2, 3, 4, 5);
+		var integerList = IntStream.rangeClosed(1, 10)
+											 .mapToObj(integer -> integer % 5)
+											 .collect(Collectors.toList());
 
 		System.out.println("toStringList");
 		toStringList(integerList).forEach(System.out::println);
@@ -29,15 +34,11 @@ class JavaCollection {
 		integerList.set(0, 100);
 		return integerList.stream()
 						  .map(String::valueOf)
-						  .toList();
+						  .collect(Collectors.toList());
 	}
 
-	/**
-	 * List를 Set으로 전환하는 간단한 작업을 위해 많은 코드가 필요하다.
-	 */
 	private static Set<Integer> toIntegerSet(List<Integer> integerList) {
-		return integerList.stream()
-						  .collect(Collectors.toSet());
+		return new HashSet<>(integerList);
 	}
 
 	private static Set<String> toStringSet(List<Integer> integerList) {

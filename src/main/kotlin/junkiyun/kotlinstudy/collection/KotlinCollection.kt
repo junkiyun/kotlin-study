@@ -13,7 +13,8 @@ package junkiyun.kotlinstudy.collection
  */
 
 fun main() {
-    val integerList = listOf(1, 2, 3, 4, 5, 1, 2, 3, 4, 5)
+//    val integerList = listOf(1, 2, 3, 4, 5, 1, 2, 3, 4, 5)
+    val integerList = IntRange(1, 10).map { it % 5 }.toList()
 
     println("toStringList")
     toStringList(integerList).forEach { println(it)}
