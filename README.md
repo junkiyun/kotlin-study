@@ -21,3 +21,5 @@
 ## Singleton
 
 ## Concurrent
+
+## Scope Function
