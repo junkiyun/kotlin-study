@@ -1,7 +1,7 @@
 package junkiyun.kotlinstudy.collection
 
 fun main() {
-    zip()
+    sequence()
 }
 
 fun flatMap() {
@@ -34,4 +34,14 @@ fun zip() {
         .map { it.toList() }
         .flatten()
         .also { println(it) }
+}
+
+fun sequence() {
+    val f = { x: Int -> println(x); x * x }
+    sequenceOf(1, 2, 3).map(f).forEach {
+        println(it)
+    }
+    listOf(1, 2, 3).map(f).forEach {
+        println(it)
+    }
 }
