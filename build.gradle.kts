@@ -16,6 +16,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.24")
     implementation("io.reactivex.rxjava3:rxjava:3.1.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+    implementation("ch.qos.logback:logback-classic:1.2.11")
     testImplementation(kotlin("test"))
 }
 
