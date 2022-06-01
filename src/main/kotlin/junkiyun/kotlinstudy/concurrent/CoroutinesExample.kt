@@ -10,7 +10,7 @@ import kotlin.random.Random
 fun main() = runBlocking {
     repeat(iteration) {
         launch {
-            println(callApi())
+            println("${Thread.currentThread()}: ${callApi()}")
         }
     }
 }
